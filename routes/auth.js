@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const passport = require('passport');
 
 /*  "/twitter"
  *    GET: Redirect the user to Twitter for authentication.
@@ -6,15 +7,10 @@ const router = require('express').Router();
  *    GET:  Finish the authentication process.
  */
 
-const login = (req, res, next) => {
-  res.json({login: 'redirect to twitter'});
-}
-
-const authenticate = (req, res, next) => {
-  res.json({authenticate: 'obtain token'});
-}
-
-router.get('/twitter', login);
-router.post('/twitter/callback', authenticate);
+router.get('/twitter', passport.authenticate('twitter', { scope : 'email' }));
+router.get('/twitter/callback', passport.authenticate('twitter', {
+  successRedirect : '/profile',
+  failureRedirect : '/'
+}));
 
 module.exports = router;

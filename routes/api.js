@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Yelp = require('./yelp.js');
+const Yelp = require('../configs/yelp.js');
 
 /*  "/venues"
  *    GET: get list of venues
