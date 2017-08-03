@@ -22,8 +22,8 @@ const toggleGoing = (req, res, next) => {
   res.json({user: 'toggle going'});
 }
 
-router.get('/venues', Yelp.getToken, Yelp.search, getVenues);
-router.get('/:venue', Yelp.getToken, Yelp.getVenue, getVenue);
+router.get('/venues/:location', Yelp.getToken, Yelp.search, getVenues);
+router.get('/venue/:venue', Yelp.getToken, Yelp.getVenue, getVenue);
 router.post('/going', toggleGoing);
 
 module.exports = router;

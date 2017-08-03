@@ -28,6 +28,8 @@
     "dotenv": "^4.0.0",
     "express-session": "^1.15.4",
     "mongoose": "^4.11.3",
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4",
     "querystring": "^0.2.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"

@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const passport = require('passport');
 
 const apiRouter = require('./routes/api');
 const authRouter = require('./routes/auth');

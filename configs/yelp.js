@@ -38,7 +38,7 @@ const yelp = {
     });
   },
   search: function(req, res, next) {
-    const url = `https://api.yelp.com/v3/businesses/search?categories=bars&location=${req.body.location}`;
+    const url = `https://api.yelp.com/v3/businesses/search?categories=bars&location=${req.params.location}`;
     axios.get(
       url,
       {headers: {'Authorization': `Bearer ${req.token}`}}
