@@ -11,11 +11,11 @@ const Yelp = require('../configs/yelp.js');
  */
 
 const getVenues = (req, res, next) => {
-  res.json({venues: req.venues});
+  res.json(req.venues);
 }
 
 const getVenue = (req, res, next) => {
-  res.json({venue: req.venue});
+  res.json(req.venue);
 }
 
 const toggleGoing = (req, res, next) => {

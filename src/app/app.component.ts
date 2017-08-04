@@ -18,6 +18,7 @@ export class AppComponent {
     this.yelp.search(value).subscribe(
       data => {
         this.venues = data;
+        console.log(this.venues);
       },
       err => {
         console.log(err);

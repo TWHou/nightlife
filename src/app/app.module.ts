@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { BarComponent } from './bar.component';
 import { YelpService } from './yelp.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BarComponent
   ],
   imports: [
     BrowserModule,
