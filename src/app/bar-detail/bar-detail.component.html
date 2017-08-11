@@ -3,4 +3,6 @@
   <h3><a [href]="venue.url">{{venue.name}}</a></h3>
   <p>Price: {{venue.price}}</p>
   <p>Rating: {{venue.rating}}</p>
+  <img *ngFor="let photo of venue.photos" [src]="photo">
+  <p>Address: {{venue.address}}</p>
 </div>

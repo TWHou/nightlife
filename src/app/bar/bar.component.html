@@ -1,0 +1,7 @@
+<div *ngFor="let venue of venues">
+  <img [src]="venue.image_url" alt="{{venue.name}}" width="100px">
+  <h3 [routerLink]="['/venue', venue.id]">{{venue.name}}</h3>
+  <p>Price: {{venue.price}}</p>
+  <p>Rating: {{venue.rating}}</p>
+  <p>View on <a [href]="venue.url">Yelp</a></p>
+</div>

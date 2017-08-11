@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { YelpService } from './yelp.service';
+import { Venue } from './classes/venue';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,12 @@ import { YelpService } from './yelp.service';
 })
 export class AppComponent {
   place = '';
-  venues;
+  venues: Venue[];
 
-  constructor(private yelp: YelpService) { }
+  constructor(private router: Router) { }
 
   onEnter(value: string) {
     this.place = value;
-    this.yelp.search(value).subscribe(
-      data => {
-        this.venues = data;
-        console.log(this.venues);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    this.router.navigate(['/venues', value]);
   }
 }
