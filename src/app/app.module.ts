@@ -10,18 +10,22 @@ import { AppComponent } from './app.component';
 import { BarComponent } from './bar/bar.component';
 import { BarDetailComponent } from './bar-detail/bar-detail.component';
 
+import 'hammerjs';
+
 import { YelpService } from './services/yelp.service';
 import { AppStateService } from './services/app-state.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { StarsComponent } from './stars/stars.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarComponent,
     BarDetailComponent,
-    HomeComponent
+    HomeComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,

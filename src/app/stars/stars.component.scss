@@ -1,0 +1,32 @@
+$starSize: 1rem;
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  height: $starSize;
+  width: calc(#{$starSize} * 5);
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+  font-size: $starSize;
+  
+  &-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  &-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+    width: 100%;
+  }
+  
+}

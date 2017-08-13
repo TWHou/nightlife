@@ -39,12 +39,12 @@ $screen-xl-min: 1200px;
     @include zero-margin(70px,30px);
     background: $background-light ;
     color:#FFF2D9;
-    min-height: 150px;
+    height: 100vh;
 }
 
 h1 {
   font-size: 2rem;
-  font-family: Roboto;
+  text-align: center;
   @include sm {
     font-size: 2.5rem;
   }
@@ -60,14 +60,17 @@ h1 {
 }
 
 input {
-  width: 90vw;
+  width: 60vw;
   font-size: 1rem;
   border-radius: 5px;
   padding: 1%;
   @include sm {
-    width: 75vw;
+    width: 70vw;
   }
   @include md {
     width: 60vw;
+  }@include xl {
+    font-size: 2rem;
+    border-radius: 10px;
   }
 }

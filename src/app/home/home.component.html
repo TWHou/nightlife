@@ -1,12 +1,11 @@
 <div class="container jumbotron"
-fxFill
 fxLayout="column"
 fxLayoutAlign="space-around center" 
 fxLayoutGap="10px">
   <h1>
     Where's the Party?
   </h1>
-  <form fxLayout="row" (ngSubmit)="search()">
+  <form fxLayout="row" fxLayout.lt-sm="column" (ngSubmit)="search()">
     <input type="text" name="place" [(ngModel)]="place" placeholder="City or Neighborhood">
     <button md-button type="submit"><md-icon>search</md-icon></button>
   </form>

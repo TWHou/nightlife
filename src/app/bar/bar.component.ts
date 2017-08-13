@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -21,7 +21,8 @@ export class BarComponent implements OnInit {
 
   constructor(
     private yelp: YelpService,
-    private appStateService: AppStateService
+    private appStateService: AppStateService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,6 +31,8 @@ export class BarComponent implements OnInit {
     if (this.hasPlace) {
       this.yelp.search(this.place)
       .subscribe((venues: Venue[]) => this.venues = venues);
+    } else {
+      this.router.navigate(['/']);
     }
   }
 

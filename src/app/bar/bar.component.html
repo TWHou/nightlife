@@ -1,7 +1,14 @@
-<div *ngFor="let venue of venues">
-  <img [src]="venue.image_url" alt="{{venue.name}}" width="100px">
-  <h3 [routerLink]="['/venue', venue.id]">{{venue.name}}</h3>
-  <p>Price: {{venue.price}}</p>
-  <p>Rating: {{venue.rating}}</p>
-  <p>View on <a [href]="venue.url">Yelp</a></p>
+<div class="container" fxLayout="row wrap" fxLayoutAlign="center center">
+  <md-card *ngFor="let venue of venues" class="card" [routerLink]="['/venue', venue.id]">
+    <md-card-header>
+      <img md-card-avatar [src]="venue.image_url" alt="{{venue.name}}">
+      <md-card-title>
+        <h3>{{venue.name}}</h3>
+      </md-card-title>
+    </md-card-header>
+    <md-card-content fxLayout="row" fxLayoutAlign="space-between center">
+      <span>{{venue.price}}</span>
+      <app-stars [stars]="venue.rating"></app-stars>
+    </md-card-content>
+  </md-card>
 </div>

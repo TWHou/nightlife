@@ -14,6 +14,10 @@ $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $cus
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  margin: 20px;
+  display: flex;
 }
