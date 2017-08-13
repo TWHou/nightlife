@@ -1,30 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+// import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
 import { YelpService } from '../services/yelp.service';
+import { AppStateService } from '../services/app-state.service';
 
 import { Venue } from '../classes/venue';
 
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
-  styleUrls: ['./bar.component.css']
+  styleUrls: ['./bar.component.scss']
 })
 export class BarComponent implements OnInit {
 
+  place: string;
+  hasPlace: boolean;
   venues: Venue[];
 
   constructor(
-    private route: ActivatedRoute,
-    private yelp: YelpService
+    private yelp: YelpService,
+    private appStateService: AppStateService
   ) { }
 
   ngOnInit() {
-    this.route.paramMap
-    .switchMap((params: ParamMap) => this.yelp.search(params.get('place')))
-    .subscribe((venues: Venue[]) => this.venues = venues);
+    this.appStateService.place$.subscribe(place => this.place = place);
+    this.hasPlace = this.place !== null;
+    if (this.hasPlace) {
+      this.yelp.search(this.place)
+      .subscribe((venues: Venue[]) => this.venues = venues);
+    }
   }
 
 }

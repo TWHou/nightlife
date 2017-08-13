@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="venue">
   <img [src]="venue.image_url" alt="{{venue.name}}" width="100px">
   <h3><a [href]="venue.url">{{venue.name}}</a></h3>
   <p>Price: {{venue.price}}</p>

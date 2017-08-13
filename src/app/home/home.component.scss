@@ -1,0 +1,73 @@
+$lt-gray: #ddd;
+$background-dark: #2D4BA8;
+$background-light: #71A9E4;
+$background-pale: #C4D7E9;
+$background-moredark: #2727A0;
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+    @include zero-margin(70px,30px);
+    background: $background-light ;
+    color:#FFF2D9;
+    min-height: 150px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: Roboto;
+  @include sm {
+    font-size: 2.5rem;
+  }
+  @include md {
+    font-size: 3rem;
+  }
+  @include lg {
+    font-size: 4rem;
+  }
+  @include xl {
+    font-size: 5rem;
+  }
+}
+
+input {
+  width: 90vw;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 1%;
+  @include sm {
+    width: 75vw;
+  }
+  @include md {
+    width: 60vw;
+  }
+}

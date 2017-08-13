@@ -7,7 +7,7 @@ import { Venue } from '../classes/venue';
 @Component({
   selector: 'app-bar-detail',
   templateUrl: './bar-detail.component.html',
-  styleUrls: ['./bar-detail.component.css']
+  styleUrls: ['./bar-detail.component.scss']
 })
 export class BarDetailComponent implements OnInit {
 
