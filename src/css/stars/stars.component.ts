@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-stars',
+  // tslint:disable-next-line:component-selector
+  selector: 'css-stars',
   templateUrl: './stars.component.html',
   styleUrls: ['./stars.component.scss']
 })

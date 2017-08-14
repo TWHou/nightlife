@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { BarComponent } from './bar/bar.component';
 import { BarDetailComponent } from './bar-detail/bar-detail.component';
 
@@ -16,16 +17,14 @@ import { YelpService } from './services/yelp.service';
 import { AppStateService } from './services/app-state.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { StarsComponent } from './stars/stars.component';
+import { CssModule } from '../css/css.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     BarComponent,
     BarDetailComponent,
-    HomeComponent,
-    StarsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +33,8 @@ import { StarsComponent } from './stars/stars.component';
     FlexLayoutModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CssModule
   ],
   providers: [
     YelpService,
