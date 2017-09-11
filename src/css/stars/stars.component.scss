@@ -1,6 +1,7 @@
 $starSize: 1rem;
 
 .star-ratings-css {
+  display: inline-block;
   unicode-bidi: bidi-override;
   color: #c5c5c5;
   height: $starSize;
@@ -27,6 +28,5 @@ $starSize: 1rem;
     display: block;
     z-index: 0;
     width: 100%;
-  }
-  
+  } 
 }

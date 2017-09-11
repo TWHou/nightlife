@@ -13,6 +13,9 @@ export class BarDetailComponent implements OnInit {
 
   id: string;
   venue: Venue;
+  lng: number;
+  zoom = 15;
+  scroll = false;
 
   constructor(
     private router: Router,
@@ -24,6 +27,7 @@ export class BarDetailComponent implements OnInit {
     this.yelp.getVenue(this.id).subscribe(
       data => {
         this.venue = data;
+        this.lng = this.venue.coordinates.longitude - 0.0035;
       },
       err => {
         console.log(err);

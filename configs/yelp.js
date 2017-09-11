@@ -74,6 +74,7 @@ const yelp = {
         price: data.price,
         rating: data.rating,
         photos: data.photos,
+        coordinates: data.coordinates,
         address: data.location.display_address.join(" ")
       };
       req.venue = venue;

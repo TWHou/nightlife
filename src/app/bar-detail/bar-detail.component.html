@@ -1,8 +1,28 @@
 <div *ngIf="venue">
-  <img [src]="venue.image_url" alt="{{venue.name}}" width="100px">
-  <h3><a [href]="venue.url">{{venue.name}}</a></h3>
-  <p>Price: {{venue.price}}</p>
-  <p>Rating: {{venue.rating}}</p>
-  <css-carousel [images]="venue.photos" width="1000px"></css-carousel>
-  <p>Address: {{venue.address}}</p>
+  <md-card class="card">
+    <md-card-header>
+      <md-card-title>{{venue.name}}</md-card-title>
+      <md-card-subtitle class="subtitle">
+        {{venue.price}}<css-stars [stars]="venue.rating"></css-stars>
+      </md-card-subtitle>
+    </md-card-header>
+    <div md-card-image>
+      <css-carousel [images]="venue.photos"></css-carousel>
+    </div>
+    <md-card-content>
+      <p>{{venue.address}}</p>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button>LIKE</button>
+      <button md-button>SHARE</button>
+    </md-card-actions>
+  </md-card>
+  <agm-map
+    [latitude]="venue.coordinates.latitude"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [scrollwheel]="scroll"
+  >
+    <agm-marker [latitude]="venue.coordinates.latitude" [longitude]="venue.coordinates.longitude"></agm-marker>
+  </agm-map>
 </div>

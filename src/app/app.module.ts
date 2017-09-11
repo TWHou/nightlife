@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -34,7 +35,10 @@ import { CssModule } from '../css/css.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CssModule
+    CssModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAyWELkBZOJwFHDXT0uv7Xatiw0becAYac'
+    })
   ],
   providers: [
     YelpService,

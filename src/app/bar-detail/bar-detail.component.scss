@@ -1,0 +1,48 @@
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+agm-map {
+  width: 100vw;
+  height: 100vh;
+  @include sm {
+    z-index: 1;
+  }
+}
+
+.card {
+  @include sm{
+    z-index: 10;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 30vw;
+    border-radius: 5px;
+  }
+}
+
+css-stars {
+  margin-left: 5px;
+}

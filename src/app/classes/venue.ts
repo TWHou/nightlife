@@ -1,3 +1,8 @@
+export class Coordinates {
+  latitude: number;
+  longitude: number;
+}
+
 export class Venue {
   id: string;
   name: string;
@@ -7,4 +12,5 @@ export class Venue {
   rating: number;
   photos: [string];
   address: string;
+  coordinates: Coordinates;
 }
